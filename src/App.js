@@ -2,7 +2,9 @@ import NavBar from "./NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Projects from "./Projects";
+import Login from "./Login";
+import BookList from "./BookList";
+
 
 function App() {
   return (
@@ -10,8 +12,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/home" element={<Home />} />
+        <Route path="/books" element={<BookList />} />
         <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
