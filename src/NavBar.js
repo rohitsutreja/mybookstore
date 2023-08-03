@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
   return (
     <div>
-      <nav style={{color: "aqua"}}>
-        <ul style ={{listStyle: "none"}}>
-            <li style ={{backgroundColor: "white" ,color:"black", padding: "5px", borderRadius: "5px"}}>BOOKSTORE</li>
-            <li><Link style ={{textDecoration: "none", color:"white"}} to='/home'>Home</Link></li>
-            <li><Link style ={{textDecoration: "none", color:"white"}} to='/books'>Books</Link></li>
-            <li><Link  style ={{textDecoration: "none", color:"white"}} to='/about'>About</Link></li>
-            <li><Link style ={{textDecoration: "none" ,color:"white"}} to='/login'>Login</Link></li>
+      <nav className="navbar"style={{color: "aqua"}}>
+        <div className="title" style ={{color:"black", padding: "2px", borderRadius: "5px", fontSize: "30px"}}>thebookSTORE</div>
+        <ul className ="navlist" style ={{listStyle: "none"}}>
+            <li><Link className = "navitem"  to='/home'>Home</Link></li>
+            <li><Link  className = "navitem"  to='/books'>Books</Link></li>
+            <li><Link  className = "navitem"   to='/about'>About</Link></li>
+            <li><Link className = "navitem"  to='/signup'>Sign Up</Link></li>
         </ul>
       </nav>
     </div>
