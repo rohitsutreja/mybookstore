@@ -1,8 +1,8 @@
-
+import axios from 'axios';
 
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextField, Button, Typography} from '@mui/material';
+import { TextField, Button, Typography, Box} from '@mui/material';
 import * as yup from 'yup';
 
 const validationSchema = yup.object({
@@ -23,11 +23,35 @@ const RegistrationForm = () => {
   };
 
   const handleSubmit = (values) => {
-    // Handle form submission logic here
-    console.log(values);
+      axios.post("https://book-e-sell-node-api.vercel.app/api/user",{
+      email : values.email,
+      password : values.password,
+      firstName : values.firstName,
+      lastName : values.lastName,
+      roleId : 2
+    }).then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   };
 
   return (
+
+    <Box     sx={{
+      display: "flex",
+      bgcolor: "white",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "70vh",
+      width: "50vw",
+      margin: "auto",
+      flexDirection: "column",
+      marginTop: "8vh",
+      borderRadius: "10px",
+      border: "2px solid black"
+    }}>
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -36,7 +60,7 @@ const RegistrationForm = () => {
       
       <Form className = "form" >
 
-      <div className="form-title"><Typography variant="h5" component="h5">Sign Up</Typography></div>
+      <div className="form-title"><Typography variant="h5" component="h5" sx={{color: "black"}}>Sign Up</Typography></div>
         <div className="form-field">
           <Field
             as={TextField}
@@ -76,7 +100,7 @@ const RegistrationForm = () => {
             variant="outlined"
             fullWidth
           />
-          <ErrorMessage name="password" component="div" />
+          <ErrorMessage className='err' name="password" component="div" />
         </div>
         <div className="form-field">
           <Field
@@ -87,13 +111,16 @@ const RegistrationForm = () => {
             variant="outlined"
             fullWidth
           />
-          <ErrorMessage name="confirmPassword" component="div" />
+          <ErrorMessage className='err' name="confirmPassword" component="div" />
         </div >
         <Button style = {{margin : 10}} type="submit" variant="contained" color="primary">
           Register
         </Button>
       </Form>
     </Formik>
+    </Box>
+
+
   );
 };
 

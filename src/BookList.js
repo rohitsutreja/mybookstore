@@ -1,12 +1,23 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
+import Book from './Book';
+import {Box, Container} from '@mui/material'
+import BookContext, { useBook } from './Context/BookContext';
 
 const BookList = () => {
+
+
+  const { books , setBooks } = useBook();
+
+  const renderBooks = books.map((book) => {
+   
+    return <Book key={book.id} book={book} />});
+
   return (
-    <div className = "book-list">
-      <div className="book" >Book1</div>
-      <div className="book" >Book2</div>
-      <div className="book" >Book3</div>
-    </div>
+      <Box flex = {4}  p ={2} sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around",}}>
+      {renderBooks}
+      </Box>
   )
 }
 

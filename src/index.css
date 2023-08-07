@@ -20,68 +20,49 @@ code {
 }
 
 
-.book{
-  width: 200px;
-  height: 300px;
-  color: black;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #E9B384;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-}
 
 
-.navbar{
-  background-color: #A1CCD1;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-}
 
 body{
-  background-color: #F4F2DE;
+  background-color: whitesmoke;
+  color:white;
 }
 
-.navlist{
-  list-style: none;
+
+
+
+
+.navitem{
+  color: white;
   display: flex;
-  /* align-items: center; */
-  font-size: 1.2em;
-  gap: 10px;
+  text-decoration: none;
+  padding: 10px;
+  height: 65px;
+  align-items: center;
+}
+
+
+.navlist li{
   height: 100%;
-  margin: 0;
 }
 
 .navitem:hover{
-  background-color: #F4F2DE;;
-  color: #A1CCD1;
-}
-
-.navitem{
   color: black;
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px;
-}
+  background-color: white;
 
-.book-list{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin: 0;
-  padding: 10px;
-  align-items: center;
 }
 
 
 .form-field, .form-title{
   margin: 10px;
+
 }
 
 .form{
   width: 70%;
 }
+
+.err{
+ color: red;
+}
+
